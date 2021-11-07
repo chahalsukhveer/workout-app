@@ -1,13 +1,11 @@
 import Activity from "../activity-page";
-import SearchParams from "../main-page/SearchParams";
 
 const ActivityResult = ({allActivities,name}) => {
 
  const selectedActivity = name ? allActivities.filter(activity => activity.name === name) : allActivities;
 
-    return (
+    return ( 
       <>
-      
       <div className="col-8">
       <table className="table table-striped">
   <thead>
@@ -19,7 +17,6 @@ const ActivityResult = ({allActivities,name}) => {
   </thead>
   <tbody>
           {selectedActivity.map(activity => (
-           
             <Activity name={activity.name} duration={activity.duration} time={activity.time}></Activity>
           ))}
           </tbody>

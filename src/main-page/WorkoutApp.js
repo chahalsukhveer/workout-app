@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ActivityResult from "../search-result";
+import ActivityResult from "../activity-result";
 
-const SearchParams = ({activities}) =>{
+const WorkoutApp = ({activities}) =>{
     const [name, setName] = useState("");
     const ACTIVITIES = ['Running', 'Cycling', 'Yoga', 'Meditation']
 return (
@@ -10,10 +10,6 @@ return (
         <div className="col-md-6"></div>
         <div className="col-md-6">
         <form>
-            {/* <label htmlFor="name">
-                Search activity: 
-                <input id="name" onChange={(e) => setName(e.target.value)} value={name}></input>
-            </label> */}
             <label htmlFor="name">
                 Search activity: 
                 <select id="name" onChange={(e) => setName(e.target.value)} value={name}>
@@ -25,14 +21,10 @@ return (
             </label>
         </form>
         </div>
-
     </div>
-            <ActivityResult allActivities={activities} name ={name}></ActivityResult>
+     <ActivityResult allActivities={activities} name ={name}></ActivityResult>
 </>
 );
 };
 
-
-
-
-export default SearchParams;
+export default WorkoutApp;
