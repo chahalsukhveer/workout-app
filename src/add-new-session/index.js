@@ -1,7 +1,6 @@
 import { useState } from "react";
-import data from '../activities.json';
 
-const AddNewSession = ({setNewSession}) => {
+const AddNewSession = ({setNewSession, activities}) => {
 const [newActivitySession, setNewActivitySession] = useState({
         name :"",
         duration : "",
@@ -15,9 +14,9 @@ const onChange = (e) => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(newActivitySession);
-    data.push(newActivitySession);
     setNewSession(false);
-    console.log(data);
+    activities.push(newActivitySession);
+    // 
     
   };
     return (

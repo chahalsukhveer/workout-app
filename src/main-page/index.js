@@ -27,7 +27,7 @@ function App() {
         </div>
         <div className="col-4">
            <button id="addNewSession" onClick={addNewSessionClick}>Add new activity</button>
-           {addNewSession && <AddNewSession setNewSession={setNewSession}></AddNewSession>}
+           {addNewSession && <AddNewSession setNewSession={setNewSession} activities={activities}></AddNewSession>}
         </div> 
       </div>
     </div>

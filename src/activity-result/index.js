@@ -16,8 +16,8 @@ const ActivityResult = ({allActivities,name}) => {
     </tr>
   </thead>
   <tbody>
-          {selectedActivity.map(activity => (
-            <Activity name={activity.name} duration={activity.duration} time={activity.time}></Activity>
+          {selectedActivity.map((activity, index) => (
+            <Activity key={index} name={activity.name} duration={activity.duration} time={activity.time}></Activity>
           ))}
           </tbody>
   </table>
