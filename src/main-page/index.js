@@ -1,15 +1,19 @@
 import './main-page.css';
 import Header from './header';
 import { useEffect, useState } from 'react';
- import data from './activities.json';
 import WorkoutApp from './WorkoutApp';
 
 function App() {
   const [activities, setActivities] = useState([]);
   const [addNewSession, setNewSession] = useState(false);
-  useEffect(()=> {
-     setActivities(data);
-  },[])
+  useEffect(() => {
+    const fetchActivities = async () => {
+      const rsp = await fetch("/activities.json");
+      const activityRes = await rsp.json();
+      setActivities(activityRes);
+    };
+    fetchActivities();
+  }, []);
 
   const addNewSessionClick = () => {setNewSession(!addNewSession);}
   return (
